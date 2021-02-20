@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es6"],
+    "sourceMap": false,
+    "allowJs": false,
+    "moduleResolution": "node",
+    "strict": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "typeRoots": ["./node_modules/@types"]
+  }
+}
