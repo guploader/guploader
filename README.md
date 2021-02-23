@@ -12,6 +12,10 @@ This monorepo contains my registry packages using
 
 You can make one yourself using the [`Yeoman`](https://yeoman.io/) [`generator`](https://github.com/GaryB432/gb-generators/tree/master/packages/generator-lerna-typescript).
 
+## 施工中
+
+以插件形式重新组织
+
 ## Packages (this may contain one day)
 
 | Project     | Package                                        | Version                                                                                         | Links                                                                                    |
