@@ -1,23 +1,17 @@
 import guid from '@guploader/utils/lib/guid';
 import Block from './block';
+import * as Interface from '@guploader/types';
 
 const rExt = /\.([^.]+)$/;
-
-interface IQZFileProps {
-  file: File;
-  blockSize?: number;
-  chunkSize?: number;
-  batch?: string;
-}
-
-export type QZFileProps = IQZFileProps;
+export type QZFileProps = Interface.QZFileProps;
 
 /**
  * @description 生成上传所需的文件结构构造器
  * @export
  * @class QZFile
+ * @implements {Interface.QZFile}
  */
-export default class QZFile {
+export default class QZFile implements Interface.QZFile {
   /**
    * 原始的文件对象
    *
@@ -100,7 +94,7 @@ export default class QZFile {
 
   /**
    * Creates an instance of QZFile.
-   * @param {QZFileProps} {
+   * @param {Interface.QZFileProps} {
    *         file,
    *         blockSize,
    *         chunkSize,
@@ -108,7 +102,12 @@ export default class QZFile {
    *     }
    * @memberof QZFile
    */
-  public constructor({ file, blockSize, chunkSize, batch }: QZFileProps) {
+  public constructor({
+    file,
+    blockSize,
+    chunkSize,
+    batch,
+  }: Interface.QZFileProps) {
     this.file = file;
     this.blockSize = blockSize || 4 * 1024 * 1024;
     this.batch = batch || guid();
@@ -151,10 +150,10 @@ export default class QZFile {
   /**
    * 获取所有块信息
    *
-   * @return {*}  {Block[]}
+   * @return {*}  {Interface.Block[]}
    * @memberof QZFile
    */
-  public getBlocks(): Block[] {
+  public getBlocks(): Interface.Block[] {
     if (this.blocks.length) {
       return this.blocks;
     }
@@ -176,10 +175,10 @@ export default class QZFile {
    * 按索引获取块信息
    *
    * @param {number} index
-   * @return {*}  {Block}
+   * @return {*}  {Interface.Block}
    * @memberof QZFile
    */
-  public getBlockByIndex(index: number): Block {
+  public getBlockByIndex(index: number): Interface.Block {
     return this.getBlocks()[index];
   }
 

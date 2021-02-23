@@ -1,18 +1,19 @@
-import Block from './block';
+import * as Interface from '@guploader/types';
 
 /**
  * @description 生成上传所需的片结构的构造器
  * @export
  * @class Chunk
+ * @implements {Interface.Chunk}
  */
-export default class Chunk {
+export default class Chunk implements Interface.Chunk {
   /**
    * 父节点引用
    *
-   * @type {Block}
+   * @type {Interface.Block}
    * @memberof Chunk
    */
-  public block: Block;
+  public block: Interface.Block;
 
   /**
    * 开始位置
@@ -32,12 +33,12 @@ export default class Chunk {
 
   /**
    * Creates an instance of Chunk.
-   * @param {Block} block
+   * @param {Interface.Block} block
    * @param {number} startByte
    * @param {number} endByte
    * @memberof Chunk
    */
-  constructor(block: Block, startByte: number, endByte: number) {
+  constructor(block: Interface.Block, startByte: number, endByte: number) {
     this.block = block;
     this.startByte = startByte;
     this.endByte = endByte;

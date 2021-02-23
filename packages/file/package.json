@@ -24,6 +24,7 @@
   "typings": "lib/index.d.ts",
   "version": "0.0.0",
   "dependencies": {
+    "@guploader/types": "^0.0.0",
     "@guploader/utils": "^0.0.0"
   }
 }

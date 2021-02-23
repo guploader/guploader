@@ -2,7 +2,7 @@
   "author": "geeeger",
   "description": "",
   "files": [
-    "lib"
+    "src"
   ],
   "homepage": "https://github.com/guploader/guploader",
   "repository": {
@@ -11,20 +11,12 @@
   },
   "keywords": [],
   "license": "MIT",
-  "main": "lib/index.js",
-  "name": "@guploader/plugin-file",
+  "main": "",
+  "name": "@guploader/types",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "scripts": {
-    "build": "tsc --pretty",
-    "prepare": "npm run build"
-  },
-  "typings": "lib/index.d.ts",
-  "version": "0.0.0",
-  "dependencies": {
-    "@guploader/file": "^0.0.0",
-    "@guploader/plugin": "^0.0.0"
-  }
+  "typings": "src/index.d.ts",
+  "version": "0.0.0"
 }

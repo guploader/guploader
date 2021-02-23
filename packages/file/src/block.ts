@@ -1,12 +1,13 @@
+import * as Interface from '@guploader/types';
 import Chunk from './chunk';
-import QZFile from './file';
 
 /**
  * @description 生成上传所需块结构的构造器
  * @export
  * @class Block
+ * @implements {Interface.Block}
  */
-export default class Block {
+export default class Block implements Interface.Block {
   /**
    * 块开始位置
    *
@@ -26,27 +27,31 @@ export default class Block {
   /**
    * 父节点引用
    *
-   * @type {QZFile}
+   * @type {Interface.QZFile}
    * @memberof Block
    */
-  public file: QZFile;
+  public file: Interface.QZFile;
 
   /**
    * 储存的片信息
    *
-   * @type {Chunk[]}
+   * @type {Interface.Chunk[]}
    * @memberof Block
    */
-  public chunks: Chunk[];
+  public chunks: Interface.Chunk[];
 
   /**
    * Creates an instance of Block.
-   * @param {QZFile} file
+   * @param {Interface.QZFile} file
    * @param {number} startByte
    * @param {number} endByte
    * @memberof Block
    */
-  public constructor(file: QZFile, startByte: number, endByte: number) {
+  public constructor(
+    file: Interface.QZFile,
+    startByte: number,
+    endByte: number
+  ) {
     this.file = file;
     this.startByte = startByte;
     this.endByte = endByte;
@@ -56,10 +61,10 @@ export default class Block {
   /**
    * 获取所有片信息（lazy）
    *
-   * @return {*}  {Chunk[]}
+   * @return {*}  {Interface.Chunk[]}
    * @memberof Block
    */
-  getChunks(): Chunk[] {
+  getChunks(): Interface.Chunk[] {
     if (this.chunks.length) {
       return this.chunks;
     }
@@ -81,10 +86,10 @@ export default class Block {
    * 按索引获取片信息
    *
    * @param {number} index
-   * @return {*}  {Chunk}
+   * @return {*}  {Interface.Chunk}
    * @memberof Block
    */
-  getChunkByIndex(index: number): Chunk {
+  getChunkByIndex(index: number): Interface.Chunk {
     return this.getChunks()[index];
   }
 
