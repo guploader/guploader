@@ -1,0 +1,31 @@
+{
+  "author": "geeeger",
+  "description": "",
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/guploader/guploader",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guploader/guploader.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "@guploader/uploader",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsc --pretty",
+    "prepare": "npm run build"
+  },
+  "typings": "lib/index.d.ts",
+  "version": "0.0.0",
+  "dependencies": {
+    "@guploader/config": "^0.0.0",
+    "@guploader/types": "^0.0.0",
+    "@guploader/utils": "^0.0.0"
+  }
+}

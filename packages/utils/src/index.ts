@@ -8,3 +8,4 @@ export { default as log } from './log';
 export { default as makePromiseChain } from './makePromiseChain';
 export { default as sizeToString } from './sizeToString';
 export { default as urlSafeBase64 } from './urlSafeBase64';
+export { default as merge } from './merge';

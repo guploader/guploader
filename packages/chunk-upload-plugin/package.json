@@ -1,0 +1,29 @@
+{
+  "author": "geeeger",
+  "description": "",
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/guploader/guploader",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guploader/guploader.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "@guploader/chunk-upload-plugin",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsc --pretty",
+    "prepare": "npm run build"
+  },
+  "typings": "lib/index.d.ts",
+  "version": "0.0.0",
+  "dependencies": {
+    "@guploader/types": "^0.0.0"
+  }
+}
