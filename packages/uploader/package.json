@@ -25,6 +25,8 @@
   "version": "0.0.0",
   "dependencies": {
     "@guploader/config": "^0.0.0",
+    "@guploader/file": "^0.0.0",
+    "@guploader/tapable": "^2.2.0",
     "@guploader/types": "^0.0.0",
     "@guploader/utils": "^0.0.0"
   }

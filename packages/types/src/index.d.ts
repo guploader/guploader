@@ -101,7 +101,7 @@ export interface HttpClientProps {
 
 export interface Plugin {
   name: string;
-  apply: (runner: any) => void;
+  apply: (runner: any, options?: any) => void;
 }
 
 export interface UploaderOptions {
@@ -246,4 +246,9 @@ export interface UploaderRawOptions {
   presets: Plugin[];
 
   plugins: Plugin[];
+}
+
+export interface Uploader {
+  options: UploaderRawOptions;
+  getPlugins: <T = any>(name: string) => T;
 }
